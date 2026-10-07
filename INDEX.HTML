@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceterias Mallu | Empadas Artesanais Doces e Salgadas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        caramel: '#8C5A3C',
+                        cream: '#FDFBF7',
+                        gold: '#D4AF37',
+                        warmBrown: '#5C3A21',
+                        pastelPink: '#F9EBEA',
+                        pastelYellow: '#FEF9E7',
+                        softSand: '#F5EBE6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles & animations */
+        .hero-pattern {
+            background-color: #FDFBF7;
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#8C5A3C 0.75px, #FDFBF7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.05;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-cream text-warmBrown font-sans antialiased selection:bg-gold selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-gold/20 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full bg-caramel flex items-center justify-center text-cream font-serif font-bold text-xl shadow-md group-hover:bg-warmBrown transition-colors">
+                    M
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-xl tracking-wide text-warmBrown">Doceterias Mallu</span>
+                    <span class="text-xs text-caramel tracking-widest uppercase">Artesanais & Deliciosas</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#inicio" class="hover:text-caramel transition-colors">Início</a>
+                <a href="#cardapio" class="hover:text-caramel transition-colors">Cardápio</a>
+                <a href="#sobre" class="hover:text-caramel transition-colors">Sobre Nós</a>
+                <a href="#contato" class="hover:text-caramel transition-colors">Contato</a>
+            </nav>
+
+            <!-- CTA Order Button -->
+            <div class="hidden md:block">
+                <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20de%20empadas%20na%20Doceterias%20Mallu." target="_blank" class="bg-caramel hover:bg-warmBrown text-white font-medium px-5 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Fazer Pedido</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-warmBrown focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-gold/20 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#inicio" class="block py-2 border-b border-warmBrown/10 font-medium">Início</a>
+            <a href="#cardapio" class="block py-2 border-b border-warmBrown/10 font-medium">Cardápio</a>
+            <a href="#sobre" class="block py-2 border-b border-warmBrown/10 font-medium">Sobre Nós</a>
+            <a href="#contato" class="block py-2 border-b border-warmBrown/10 font-medium">Contato</a>
+            <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20de%20empadas%20na%20Doceterias%20Mallu." target="_blank" class="w-full bg-caramel text-white text-center py-3 rounded-full font-medium shadow-md flex items-center justify-center gap-2 mt-4">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Fazer Pedido via WhatsApp</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-32 hero-pattern relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 bg-pastelYellow px-4 py-1.5 rounded-full border border-gold/30 text-caramel text-xs font-semibold tracking-wider uppercase">
+                    <i class="fa-solid fa-star text-gold"></i> O Sabor Inconfundível da Tradição
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-warmBrown leading-tight">
+                    Empadas Artesanais <span class="text-caramel italic">Doces e Salgadas</span> Feitas com Amor
+                </h1>
+                <p class="text-warmBrown/80 text-base sm:text-lg max-w-xl mx-auto md:mx-0">
+                    Massa que derrete na boca e recheios generosos e suculentos. Experimente a verdadeira sensação artesanal da <strong class="text-caramel">Doceterias Mallu</strong>.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                    <a href="#cardapio" class="w-full sm:w-auto bg-caramel hover:bg-warmBrown text-white font-medium px-8 py-3.5 rounded-full shadow-lg transition-all duration-300 text-center">
+                        Ver Cardápio Completo
+                    </a>
+                    <a href="https://wa.me/5592999999999?text=Olá!%20Quero%20conhecer%20as%20empadas%20da%20Doceterias%20Mallu." target="_blank" class="w-full sm:w-auto bg-white hover:bg-pastelYellow text-warmBrown border border-gold/40 font-medium px-8 py-3.5 rounded-full shadow-sm transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                        <span>Falar no WhatsApp</span>
+                    </a>
+                </div>
+                <!-- Mini Stats -->
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-warmBrown/10 max-w-md mx-auto md:mx-0">
+                    <div>
+                        <h4 class="font-serif text-2xl font-bold text-caramel">100%</h4>
+                        <p class="text-xs text-warmBrown/70">Artesanal</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-2xl font-bold text-caramel">6+</h4>
+                        <p class="text-xs text-warmBrown/70">Sabores Exclusivos</p>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-2xl font-bold text-caramel">5.0</h4>
+                        <p class="text-xs text-warmBrown/70">Avaliações</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image / Illustration -->
+            <div class="relative flex justify-center">
+                <div class="absolute -inset-4 bg-gradient-to-tr from-gold/20 to-caramel/10 rounded-full blur-2xl -z-10"></div>
+                <div class="relative w-full max-w-md bg-white p-6 rounded-3xl shadow-2xl border border-gold/30 animate-float">
+                    <div class="overflow-hidden rounded-2xl aspect-square bg-pastelPink relative">
+                        <img src="https://placehold.co/600x600/8C5A3C/FDFBF7?text=Empadas+Mallu" alt="Empadas Artesanais Doceterias Mallu" class="w-full h-full object-cover">
+                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-md border border-gold/20 flex items-center gap-3">
+                            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
+                            <span class="text-xs font-semibold text-warmBrown">Saídas do Forno Agora!</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between items-center px-2">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-warmBrown">Combo Sabores do Dia</h3>
+                            <p class="text-xs text-warmBrown/70">Salgadas & Doces fresquinhas</p>
+                        </div>
+                        <span class="bg-pastelYellow text-caramel text-xs font-bold px-3 py-1.5 rounded-lg border border-gold/30">Destaque</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="cardapio" class="py-24 bg-softSand/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-caramel font-semibold text-xs tracking-widest uppercase bg-caramel/10 px-3 py-1 rounded-full">Nosso Cardápio Especial</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-warmBrown">Empadas Salgadas & Doces</h2>
+                <p class="text-warmBrown/80 text-base">
+                    Preparadas diariamente com ingredientes selecionados, massa leve e recheios que conquistam qualquer paladar. Escolha a sua favorita!
+                </p>
+            </div>
+
+            <!-- Menu Category Tabs -->
+            <div class="flex justify-center gap-4 mb-12">
+                <button onclick="filterMenu('all')" id="btn-all" class="menu-tab px-6 py-2.5 rounded-full font-medium text-sm bg-caramel text-white shadow-md transition-all">Todos os Sabores</button>
+                <button onclick="filterMenu('salgada')" id="btn-salgada" class="menu-tab px-6 py-2.5 rounded-full font-medium text-sm bg-white text-warmBrown border border-warmBrown/20 hover:border-caramel transition-all">Salgadas</button>
+                <button onclick="filterMenu('doce')" id="btn-doce" class="menu-tab px-6 py-2.5 rounded-full font-medium text-sm bg-white text-warmBrown border border-warmBrown/20 hover:border-caramel transition-all">Doces</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Frango (Salgada) -->
+                <div class="menu-item salgada bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gold/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 bg-pastelYellow">
+                            <img src="https://placehold.co/400x300/8C5A3C/FDFBF7?text=Empada+de+Frango" alt="Empada de Frango" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-caramel text-white text-xs px-3 py-1 rounded-full font-medium shadow">Salgada</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmBrown">Empada de Frango</h3>
+                            <span class="font-serif font-bold text-caramel text-lg">R$ 8,50</span>
+                        </div>
+                        <p class="text-warmBrown/70 text-sm mb-6">
+                            Recheio cremoso e suculento de frango desfiado temperado com ervas finas e aquele toque especial da casa.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20pedir%20uma%20Empada%20de%20Frango." target="_blank" class="w-full bg-pastelYellow hover:bg-caramel hover:text-white text-warmBrown font-medium py-3 rounded-2xl text-center transition-all duration-300 flex items-center justify-center gap-2 text-sm border border-gold/30">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pedir Frango</span>
+                    </a>
+                </div>
+
+                <!-- Camarão (Salgada) -->
+                <div class="menu-item salgada bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gold/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 bg-pastelYellow">
+                            <img src="https://placehold.co/400x300/8C5A3C/FDFBF7?text=Empada+de+Camarao" alt="Empada de Camarão" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-caramel text-white text-xs px-3 py-1 rounded-full font-medium shadow">Salgada</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmBrown">Empada de Camarão</h3>
+                            <span class="font-serif font-bold text-caramel text-lg">R$ 11,00</span>
+                        </div>
+                        <p class="text-warmBrown/70 text-sm mb-6">
+                            Camarões selecionados refogados no azeite de dendê leve, com catupiry cremoso e temperos frescos.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20pedir%20uma%20Empada%20de%20Camarão." target="_blank" class="w-full bg-pastelYellow hover:bg-caramel hover:text-white text-warmBrown font-medium py-3 rounded-2xl text-center transition-all duration-300 flex items-center justify-center gap-2 text-sm border border-gold/30">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pedir Camarão</span>
+                    </a>
+                </div>
+
+                <!-- Queijo e Presunto (Salgada) -->
+                <div class="menu-item salgada bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gold/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 bg-pastelYellow">
+                            <img src="https://placehold.co/400x300/8C5A3C/FDFBF7?text=Empada+Queijo+e+Presunto" alt="Empada Queijo e Presunto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-caramel text-white text-xs px-3 py-1 rounded-full font-medium shadow">Salgada</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmBrown">Queijo e Presunto</h3>
+                            <span class="font-serif font-bold text-caramel text-lg">R$ 8,50</span>
+                        </div>
+                        <p class="text-warmBrown/70 text-sm mb-6">
+                            A clássica combinação de cubos de presunto nobre e muito queijo derretido que agrada a todas as idades.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20pedir%20uma%20Empada%20de%20Queijo%20e%20Presunto." target="_blank" class="w-full bg-pastelYellow hover:bg-caramel hover:text-white text-warmBrown font-medium py-3 rounded-2xl text-center transition-all duration-300 flex items-center justify-center gap-2 text-sm border border-gold/30">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pedir Queijo e Presunto</span>
+                    </a>
+                </div>
+
+                <!-- Leite Condensado (Doce) -->
+                <div class="menu-item doce bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gold/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 bg-pastelPink">
+                            <img src="https://placehold.co/400x300/D4AF37/FDFBF7?text=Empada+Leite+Condensado" alt="Empada de Leite Condensado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-gold text-white text-xs px-3 py-1 rounded-full font-medium shadow">Doce</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmBrown">Leite Condensado</h3>
+                            <span class="font-serif font-bold text-caramel text-lg">R$ 9,00</span>
+                        </div>
+                        <p class="text-warmBrown/70 text-sm mb-6">
+                            Massa leve recheada com um delicioso creme de leite condensado artesanal levemente dourado ao forno.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20pedir%20uma%20Empada%20de%20Leite%20Condensado." target="_blank" class="w-full bg-pastelPink hover:bg-gold hover:text-white text-warmBrown font-medium py-3 rounded-2xl text-center transition-all duration-300 flex items-center justify-center gap-2 text-sm border border-gold/30">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pedir Leite Condensado</span>
+                    </a>
+                </div>
+
+                <!-- Brigadeiro (Doce) -->
+                <div class="menu-item doce bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gold/20 flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 rounded-2xl overflow-hidden mb-6 bg-pastelPink">
+                            <img src="https://placehold.co/400x300/D4AF37/FDFBF7?text=Empada+de+Brigadeiro" alt="Empada de Brigadeiro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 right-3 bg-gold text-white text-xs px-3 py-1 rounded-full font-medium shadow">Doce</span>
+                        </div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-serif font-bold text-xl text-warmBrown">Empada de Brigadeiro</h3>
+                            <span class="font-serif font-bold text-caramel text-lg">R$ 9,00</span>
+                        </div>
+                        <p class="text-warmBrown/70 text-sm mb-6">
+                            Recheada com autêntico brigadeiro cremoso feito com chocolate nobre e finalizada com granulado especial.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20pedir%20uma%20Empada%20de%20Brigadeiro." target="_blank" class="w-full bg-pastelPink hover:bg-gold hover:text-white text-warmBrown font-medium py-3 rounded-2xl text-center transition-all duration-300 flex items-center justify-center gap-2 text-sm border border-gold/30">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pedir Brigadeiro</span>
+                    </a>
+                </div>
+
+                <!-- Combo Mix Mallu -->
+                <div class="menu-item salgada doce bg-gradient-to-br from-caramel to-warmBrown text-white rounded-3xl p-6 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="bg-white/10 text-gold text-xs font-semibold px-3 py-1.5 rounded-full inline-block mb-6 border border-gold/30">
+                            <i class="fa-solid fa-gift mr-1"></i> Especial Mallu
+                        </div>
+                        <h3 class="font-serif font-bold text-2xl mb-3">Combo Degustação 6 Unidades</h3>
+                        <p class="text-white/80 text-sm mb-6">
+                            Monte seu combo com 3 empadas salgadas à escolha e 3 empadas doces irresistíveis para compartilhar!
+                        </p>
+                        <div class="flex items-center gap-2 text-gold text-xs mb-6">
+                            <i class="fa-solid fa-check"></i> Escolha livre dos sabores do cardápio
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-white/80">Preço Especial</span>
+                            <span class="font-serif font-bold text-2xl text-gold">R$ 48,00</span>
+                        </div>
+                        <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20pedir%20o%20Combo%20Degustação%206%20Unidades." target="_blank" class="w-full bg-gold hover:bg-white hover:text-warmBrown text-warmBrown font-bold py-3.5 rounded-2xl text-center transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-md">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pedir Combo no WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="sobre" class="py-24 bg-cream relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-md bg-softSand p-4 rounded-3xl shadow-xl border border-gold/30">
+                    <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-caramel/10">
+                        <img src="https://placehold.co/600x750/8C5A3C/FDFBF7?text=Nossa+Cozinha+Artesanal" alt="Cozinha Doceterias Mallu" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-gold/30 max-w-xs">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-caramel">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-sm text-warmBrown">Feito com Carinho</h4>
+                                <p class="text-xs text-warmBrown/70">Receitas exclusivas e caseiras</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <span class="text-caramel font-semibold text-xs tracking-widest uppercase bg-caramel/10 px-3 py-1 rounded-full">Sobre a Doceterias Mallu</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-warmBrown leading-tight">
+                    Tradição, Sabor e Afeto em Cada Mordida
+                </h2>
+                <p class="text-warmBrown/80 text-base leading-relaxed">
+                    A <strong class="text-caramel">Doceterias Mallu</strong> nasceu da paixão pela culinária artesanal. Acreditamos que uma boa empada vai muito além de um lanche: é um momento de aconchego, sabor e felicidade no seu dia.
+                </p>
+                <p class="text-warmBrown/80 text-base leading-relaxed">
+                    Utilizamos ingredientes selecionados de alta qualidade, sem conservantes, garantindo aquela massa amanteigada que desmancha na boca combinada com recheios fartos, tanto nas opções salgadas quanto nas doces.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-pastelYellow text-caramel flex items-center justify-center font-bold flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-seedling text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-warmBrown">Ingredientes Selecionados</h4>
+                            <p class="text-xs text-warmBrown/70">Frescor e qualidade garantidos diariamente.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-pastelYellow text-caramel flex items-center justify-center font-bold flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-fire text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-warmBrown">Assadas na Hora</h4>
+                            <p class="text-xs text-warmBrown/70">Sempre quentinhas e crocantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Order Section -->
+    <section id="contato" class="py-24 bg-softSand/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-2xl border border-gold/30 p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <span class="text-caramel font-semibold text-xs tracking-widest uppercase bg-caramel/10 px-3 py-1 rounded-full">Faça seu Pedido</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-warmBrown">Pronto para se Deliciar?</h2>
+                    <p class="text-warmBrown/80 text-base">
+                        Peça agora suas empadas favoritas para receber em casa ou garantir aquele lanche especial. Atendemos encomendas para festas e reuniões!
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-pastelYellow text-caramel flex items-center justify-center text-xl font-bold shadow-sm">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-warmBrown/70 uppercase font-semibold">WhatsApp de Pedidos</h4>
+                                <p class="font-serif font-bold text-lg text-warmBrown">(92) 99999-9999</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-pastelYellow text-caramel flex items-center justify-center text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-warmBrown/70 uppercase font-semibold">Horário de Funcionamento</h4>
+                                <p class="font-serif font-bold text-base text-warmBrown">Segunda a Sábado: 13h às 21h</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-pastelYellow text-caramel flex items-center justify-center text-xl font-bold shadow-sm">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-warmBrown/70 uppercase font-semibold">Localização</h4>
+                                <p class="font-serif font-bold text-base text-warmBrown">Manaus - AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Order Form / WhatsApp CTA Box -->
+                <div class="bg-pastelYellow/50 rounded-2xl p-8 border border-gold/30 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h3 class="font-serif font-bold text-2xl text-warmBrown">Atendimento Rápido</h3>
+                        <p class="text-warmBrown/80 text-sm">
+                            Clique no botão abaixo para conversar diretamente com nossa equipe no WhatsApp. Tire dúvidas, consulte taxas de entrega ou monte seu combo personalizado!
+                        </p>
+                    </div>
+
+                    <div class="pt-8 space-y-4">
+                        <a href="https://wa.me/5592999999999?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Doceterias%20Mallu." target="_blank" class="w-full bg-caramel hover:bg-warmBrown text-white font-bold py-4 rounded-2xl shadow-xl transition-all duration-300 flex items-center justify-center gap-3 text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Pedir pelo WhatsApp Agora</span>
+                        </a>
+                        <p class="text-center text-xs text-warmBrown/60">
+                            Respostas rápidas durante o horário de atendimento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-warmBrown text-cream py-12 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-caramel flex items-center justify-center text-cream font-serif font-bold text-xl">
+                    M
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl tracking-wide text-cream">Doceterias Mallu</span>
+                    <p class="text-xs text-cream/70">Empadas Artesanais Doces e Salgadas</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 text-cream/80 text-sm">
+                <a href="#inicio" class="hover:text-gold transition-colors">Início</a>
+                <a href="#cardapio" class="hover:text-gold transition-colors">Cardápio</a>
+                <a href="#sobre" class="hover:text-gold transition-colors">Sobre Nós</a>
+                <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-caramel flex items-center justify-center text-cream transition-colors">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-caramel flex items-center justify-center text-cream transition-colors">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/5592999999999" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-caramel flex items-center justify-center text-cream transition-colors">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-white/10 text-center text-xs text-cream/50">
+            &copy; 2026 Doceterias Mallu. Todos os direitos reservados. Feito com muito carinho e sabor.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Filtering -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Menu category filter
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const btnAll = document.getElementById('btn-all');
+            const btnSalgada = document.getElementById('btn-salgada');
+            const btnDoce = document.getElementById('btn-doce');
+
+            // Reset button styles
+            [btnAll, btnSalgada, btnDoce].forEach(btn => {
+                btn.className = "menu-tab px-6 py-2.5 rounded-full font-medium text-sm bg-white text-warmBrown border border-warmBrown/20 hover:border-caramel transition-all";
+            });
+
+            // Highlight active button
+            if(category === 'all') {
+                btnAll.className = "menu-tab px-6 py-2.5 rounded-full font-medium text-sm bg-caramel text-white shadow-md transition-all";
+            } else if(category === 'salgada') {
+                btnSalgada.className = "menu-tab px-6 py-2.5 rounded-full font-medium text-sm bg-caramel text-white shadow-md transition-all";
+            } else if(category === 'doce') {
+                btnDoce.className = "menu-tab px-6 py-2.5 rounded-full font-medium text-sm bg-caramel text-white shadow-md transition-all";
+            }
+
+            // Filter items
+            items.forEach(item => {
+                if(category === 'all') {
+                    item.style.display = 'flex';
+                } else {
+                    if(item.classList.contains(category)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
